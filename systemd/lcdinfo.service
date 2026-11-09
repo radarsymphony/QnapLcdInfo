@@ -4,8 +4,10 @@ After=syslog.target
 
 [Service]
 Type=simple
+User=root
+WorkingDirectory=/root/QnapLcdInfo
 Restart=on-failure
-ExecStart=/usr/local/bin/lcdInfo/lcdInfo.py
+ExecStart=/root/.local/bin/uv run lcdInfo.py
 
 [Install]
 WantedBy=multi-user.target
